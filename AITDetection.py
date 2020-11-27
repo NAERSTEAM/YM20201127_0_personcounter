@@ -1,3 +1,4 @@
+#20201127 T.I. Added counting
 from imageai.Detection import VideoObjectDetection
 import os
 import cv2
@@ -5,9 +6,14 @@ import cv2
 
 def per_frame_function_DataGet(counting, output_objects_array, output_objects_count,detected_frame):
 
+    person_count=0
     for eachObject in output_objects_array:
         print(eachObject["name"])
 		
+        if "person"==eachObject["name"]:
+            person_count=person_count+1
+		  
+    print("有",person_count,"人")
     print("====================================================")
     
     detected_frame = cv2.cvtColor(detected_frame, cv2.COLOR_BGR2RGB)
