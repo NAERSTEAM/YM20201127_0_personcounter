@@ -28,10 +28,10 @@ detector.setModelTypeAsYOLOv3()
 detector.setModelPath( os.path.join(execution_path , "yolo.h5"))
 detector.loadModel(detection_speed='fastest')
 detector.detectObjectsFromVideo(camera_input=camera,
-										 save_detected_video=False,
-						                 frames_per_second=20, 
-						                 minimum_percentage_probability=60,
-						                 log_progress=False,
-										 per_frame_function=per_frame_function_DataGet,
-										 return_detected_frame=True)
+								save_detected_video=False,
+						        frames_per_second=20, 
+						        minimum_percentage_probability=60,
+						        log_progress=False,
+						        per_frame_function=per_frame_function_DataGet,
+								return_detected_frame=True)
 							
