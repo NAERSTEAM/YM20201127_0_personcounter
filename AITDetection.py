@@ -1,3 +1,4 @@
+#20201202 T.I. changed the default camer to VideoCapture(0)
 #20201127 T.I. Added counting
 from imageai.Detection import VideoObjectDetection
 import os
@@ -27,7 +28,7 @@ def per_frame_function_DataGet(counting, output_objects_array, output_objects_co
 #==========================================================================    
 
 execution_path = os.getcwd()
-camera = cv2.VideoCapture(1)
+camera = cv2.VideoCapture(0)
 
 detector = VideoObjectDetection()
 detector.setModelTypeAsYOLOv3()
@@ -35,7 +36,7 @@ detector.setModelPath( os.path.join(execution_path , "yolo.h5"))
 detector.loadModel(detection_speed='fastest')
 detector.detectObjectsFromVideo(camera_input=camera,
 								save_detected_video=False,
-						        frames_per_second=20, 
+						        frames_per_second=20,
 						        minimum_percentage_probability=60,
 						        log_progress=False,
 						        per_frame_function=per_frame_function_DataGet,
